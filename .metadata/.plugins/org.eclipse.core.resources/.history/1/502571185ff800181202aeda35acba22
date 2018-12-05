@@ -1,0 +1,10 @@
+package com.target.rest.service;
+
+import java.util.List;
+
+import com.target.rest.model.TrieNode;
+
+public class TrieNodeServiceImpl implements ObjectionableService {
+	
+	
+}

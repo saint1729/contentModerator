@@ -1,0 +1,7 @@
+package com.target.rest.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ObjectionableRepository extends JpaRepository<T, ID> {
+
+}

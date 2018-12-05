@@ -1,0 +1,14 @@
+package com.target.rest.service;
+
+import java.util.List;
+
+import com.target.rest.model.TrieNode;
+
+public interface TrieNodeService {
+
+//	public List<TrieNode> getAllObjectionables();
+//    public TrieNode getObjectionableById(Long id);
+//    public TrieNode addObjectionablePhrase(String string);
+    
+    
+}

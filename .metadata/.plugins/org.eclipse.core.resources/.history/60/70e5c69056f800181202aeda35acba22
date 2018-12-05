@@ -1,0 +1,14 @@
+package com.target.rest.model;
+
+public class TrieNode {
+
+    Map<Character, TrieNode> children;
+    boolean endOfWord;
+    
+    public TrieNode() {
+        this.children = new HashMap<>();
+        this.endOfWord = false;
+    }
+
+
+}

@@ -1,6 +1,6 @@
 package com.target.rest.service;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.target.rest.model.Content;
+import com.target.rest.model.Objectionable;
 import com.target.rest.repository.ContentRepository;
 
 @Service
@@ -17,6 +18,9 @@ public class ReviewServiceImpl implements ReviewService {
 	
 	@Autowired
 	private ContentRepository contentRepository;
+
+	@Autowired
+	private ObjectionableServiceImpl objectionableServiceImpl;
 
 	public Content getContentById(Long id) {
 		Optional<Content> content = contentRepository.findById(id);
@@ -34,12 +38,30 @@ public class ReviewServiceImpl implements ReviewService {
 	}
 	
 	
+	private int isSubstring(String s1, String s2) { 
+        int M = s1.length(); 
+        int N = s2.length(); 
+      
+        for (int i = 0; i <= N - M; i++) { 
+            int j; 
+      
+            for (j = 0; j < M; j++) 
+                if (s2.charAt(i + j) != s1.charAt(j)) 
+                    break; 
+      
+            if (j == M) 
+                return i; 
+        } 
+      
+        return -1; 
+    }
+	
 	public Content validateAndCreateContent(Content content) {
 		
-		List<String> blocked = Arrays.asList("alpha", "beta", "gamma", "delta");
-		
-		Set<String> hs = new HashSet<>(blocked);
-		
+//		List<String> blocked = Arrays.asList("alpha", "beta", "gamma", "delta");
+//		
+//		Set<String> hs = new HashSet<>(blocked);
+//		
 //		if(content.getComment().contains("Alpha")) {
 //			return null;
 //		} else {
@@ -49,13 +71,22 @@ public class ReviewServiceImpl implements ReviewService {
 //			return savedContent;
 //		}
 		
+		List<Objectionable> objectionables = objectionableServiceImpl.getAllObjectionables();
+		
+		List<String> abusives = new ArrayList<>();
+		
+		for(Objectionable objectionable : objectionables) {
+			abusives.add(objectionable.getPhrase());
+		}
+		
+		Set<String> words = new HashSet<>(abusives);
+		
+		
 		String comment = content.getComment();
 		
-		String[] words = comment.split(" ");
 		
-		
-		for(String word:words) {
-			if(hs.contains(word.toLowerCase())) {
+		for(String word : words) {
+			if(isSubstring(comment, word) != -1) {
 				throw new RuntimeException("Objectionable content is present");
 			}
 		}
