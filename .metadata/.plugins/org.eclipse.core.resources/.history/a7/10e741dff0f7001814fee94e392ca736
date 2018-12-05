@@ -1,0 +1,12 @@
+package com.target.rest.model;
+
+
+@Entity
+public class Content {
+	
+	@Id
+	@GeneratedValue
+	private int id;
+	private String userName;
+	private String comment;
+}

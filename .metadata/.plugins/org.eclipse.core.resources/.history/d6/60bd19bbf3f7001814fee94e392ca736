@@ -1,0 +1,7 @@
+package com.target.rest.repository;
+
+
+@Repository
+public interface ContentRepository {
+	
+}

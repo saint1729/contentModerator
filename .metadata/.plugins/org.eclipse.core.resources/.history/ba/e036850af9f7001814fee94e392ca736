@@ -1,0 +1,6 @@
+package com.target.rest.service;
+
+@Service
+public class ReviewServiceImpl implements ReviewService {
+	
+}

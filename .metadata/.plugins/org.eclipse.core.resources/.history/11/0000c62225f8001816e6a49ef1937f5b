@@ -1,0 +1,7 @@
+package com.target.rest.service;
+
+import com.target.rest.model.Content;
+
+public interface ReviewService {
+    public Content getContentById(Long id);
+}

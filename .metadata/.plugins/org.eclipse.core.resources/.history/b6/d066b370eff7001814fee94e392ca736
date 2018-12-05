@@ -1,0 +1,5 @@
+package com.target.rest.model;
+
+public class Content {
+
+}

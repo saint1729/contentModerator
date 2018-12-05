@@ -1,0 +1,19 @@
+package com.target.rest.service;
+
+import com.target.rest.repository.ContentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.target.rest.model.Content;
+
+@Service
+public class ReviewServiceImpl implements ReviewService {
+	
+//	@Autowired
+//	private ContentRepository contentRepository;
+
+	public Content getContentById(Long id) {
+		return null;
+		//return contentRepository.getContent(1L);
+	}
+}

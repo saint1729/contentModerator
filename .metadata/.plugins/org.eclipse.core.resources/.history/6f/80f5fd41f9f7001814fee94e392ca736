@@ -1,0 +1,11 @@
+package com.target.rest.service;
+
+import org.springframework.stereotype.Service;
+
+import com.target.rest.repository.ContentRepository;
+
+@Service
+public class ReviewServiceImpl implements ReviewService {
+	
+	private ContentRepository contentRepository;
+}

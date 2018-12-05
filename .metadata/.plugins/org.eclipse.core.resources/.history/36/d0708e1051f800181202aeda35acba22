@@ -1,0 +1,49 @@
+package com.target.rest.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.target.rest.model.Content;
+import com.target.rest.repository.ContentRepository;
+
+@Service
+public class ReviewServiceImpl implements ReviewService {
+	
+	@Autowired
+	private ContentRepository contentRepository;
+
+	public Content getContentById(Long id) {
+		Optional<Content> content = contentRepository.findById(id);
+		
+		if(!content.isPresent()) {
+			throw new RuntimeException("Id not found");
+		}
+		
+		return content.get();
+	}
+
+	@Override
+	public List<Content> getAllContents() {
+		return contentRepository.findAll();
+	}
+	
+	
+	public Content validateAndCreateContent(Content content) {
+		
+		if(content.getComment().contains("Alpha")) {
+			return null;
+		} else {
+			
+			Content savedContent = contentRepository.save(content);
+			
+			return savedContent;
+		}
+		
+	}
+	
+	
+	
+}

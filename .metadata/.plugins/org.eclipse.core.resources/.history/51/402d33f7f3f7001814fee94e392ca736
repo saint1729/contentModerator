@@ -1,0 +1,7 @@
+package com.target.rest.controller;
+
+
+@RestController
+public class ContentController {
+
+}

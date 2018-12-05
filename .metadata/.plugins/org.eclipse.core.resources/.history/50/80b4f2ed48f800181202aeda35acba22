@@ -1,0 +1,2 @@
+--insert into CONTENTS values(1,'Saint', 'Alpha Beta');
+create table temp;
