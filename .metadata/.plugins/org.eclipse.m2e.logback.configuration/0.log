@@ -2443,3 +2443,8 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.springfra
 2018-12-05 13:51:11,074 [Worker-64: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
 2018-12-05 13:51:11,079 [Worker-64: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2018-12-05 13:51:11,079 [Worker-64: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vinrar/Desktop/sts-bundle/workspace/ContentReviewer/src/test/resources
+2018-12-05 14:01:42,513 [Worker-69: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-05 14:01:42,514 [Worker-69: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-05 14:01:42,515 [Worker-69: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-12-05 14:01:42,517 [Worker-69: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-05 14:01:42,518 [Worker-69: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vinrar/Desktop/sts-bundle/workspace/ContentReviewer/src/test/resources

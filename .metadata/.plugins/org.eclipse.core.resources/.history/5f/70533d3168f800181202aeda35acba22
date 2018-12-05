@@ -86,7 +86,7 @@ public class ReviewServiceImpl implements ReviewService {
 		
 		
 		for(String word : words) {
-			if(isSubstring(word, comment) != -1) {
+			if(isSubstring(comment, word) != -1) {
 				throw new RuntimeException("Objectionable content is present");
 			}
 		}
